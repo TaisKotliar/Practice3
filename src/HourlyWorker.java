@@ -3,11 +3,11 @@ public class HourlyWorker extends Employee {
     /**
      * Standart work hours in a week
      */
-    final int NORMALHOURS = 160;
+    final int NORMAL_HOURS = 160;
     /**
      * Normal pay for work below 160 hours
      */
-    double payForHours = 100;
+    private double payForHours = 100;
     /**
      * Real work hours
      */
@@ -23,12 +23,20 @@ public class HourlyWorker extends Employee {
         this.hoursWork = hoursWork;
     }
 
+    public double getPayForHours() {
+        return payForHours;
+    }
+
+    public void setPayForHours(double payForHours) {
+        this.payForHours = payForHours;
+    }
+
     @Override
     public double evaluateSalary() {
-        if (hoursWork <= NORMALHOURS) {
+        if (hoursWork <= NORMAL_HOURS) {
             salary = payForHours * hoursWork;
         } else {
-            salary = (hoursWork - NORMALHOURS) * percentOver + NORMALHOURS * payForHours;
+            salary = (hoursWork - NORMAL_HOURS) * percentOver + NORMAL_HOURS * payForHours;
         }
         return salary;
     }

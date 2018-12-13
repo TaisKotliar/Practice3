@@ -19,6 +19,8 @@ public class Main {
         CommissionWorker commissionWorker2 = new CommissionWorker("Merlin2", "Kramli2", 20500);
         CommissionWorker commissionWorker3 = new CommissionWorker("Merlin3", "Kramli3", 30000);
 
+        hourlyWorker1.setPayForHours(50);
+
         myCompany.add(boss);
         myCompany.add(pieceWorker1);
         myCompany.add(pieceWorker2);
@@ -30,18 +32,24 @@ public class Main {
         myCompany.add(commissionWorker2);
         myCompany.add(commissionWorker3);
 
-        for (Employee currentEmployee : myCompany) {
-            currentEmployee.evaluateSalary();
-            currentEmployee.displayInfo();
-            System.out.println();
-        }
-        /**
-         * Summary salary for all workers
-         */
+
         double summary = 0;
         for (Employee currentEmployee : myCompany) {
+            System.out.println(currentEmployee.getClass().toString());
+            currentEmployee.evaluateSalary();
+            currentEmployee.displayInfo();
+            System.out.println();//для того, чтобы бы был пробел между выводом каждого рабочего
             summary += currentEmployee.salary;
         }
         System.out.println("Summary Salary: " + summary);
+        /**
+         * Summary salary for all workers
+         */
+        /*double summary = 0;
+             for (Employee currentEmployee : myCompany) {
+             summary += currentEmployee.salary;
+        }
+         System.out.println("Summary Salary: " + summary);
+        */
     }
 }

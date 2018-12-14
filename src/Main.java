@@ -41,14 +41,5 @@ public class Main {
             summary += currentEmployee.salary;
         }
         System.out.println("Summary Salary: " + summary);
-        /**
-         * Summary salary for all workers
-         */
-        /*double summary = 0;
-             for (Employee currentEmployee : myCompany) {
-             summary += currentEmployee.salary;
-        }
-         System.out.println("Summary Salary: " + summary);
-        */
     }
 }

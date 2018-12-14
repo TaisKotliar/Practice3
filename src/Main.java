@@ -35,10 +35,9 @@ public class Main {
 
         double summary = 0;
         for (Employee currentEmployee : myCompany) {
-            System.out.println(currentEmployee.getClass().toString());
+            System.out.println(currentEmployee.getClass().toString() + "\n");
             currentEmployee.evaluateSalary();
             currentEmployee.displayInfo();
-            System.out.println();//для того, чтобы бы был пробел между выводом каждого рабочего
             summary += currentEmployee.salary;
         }
         System.out.println("Summary Salary: " + summary);
